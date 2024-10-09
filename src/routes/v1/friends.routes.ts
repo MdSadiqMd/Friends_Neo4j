@@ -3,9 +3,9 @@ import { Hono, Context } from 'hono';
 import { executeCypherQuery } from '../../db/config';
 import formatResponse from '../../utils/formatResponse';
 
-const app = new Hono();
+const friendsRouter = new Hono();
 
-app.post('/add', async (c: Context) => {
+friendsRouter.post('/add', async (c: Context) => {
     const { source, destination } = await c.req.json();
 
     if (!source || source < 1 || !destination || destination < 1) {
@@ -24,7 +24,7 @@ app.post('/add', async (c: Context) => {
     }
 });
 
-app.get('/list/:id', async (c: Context) => {
+friendsRouter.get('/list/:id', async (c: Context) => {
     const id = parseInt(c.req.param('id'));
 
     if (isNaN(id) || id < 1) {
@@ -43,7 +43,7 @@ app.get('/list/:id', async (c: Context) => {
     }
 });
 
-app.post('/delete', async (c: Context) => {
+friendsRouter.post('/delete', async (c: Context) => {
     const { source, destination } = await c.req.json();
 
     if (!source || source < 1 || !destination || destination < 1) {
@@ -61,4 +61,4 @@ app.post('/delete', async (c: Context) => {
     }
 });
 
-export default app;
+export default friendsRouter;
