@@ -12,7 +12,7 @@ userRouter.post('/', async (c: Context) => {
         return c.text('Invalid Inputs', 400);
     }
 
-    const query = `CREATE (n:Users {id:${id}, name:$name, email:${email}}) RETURN n`;
+    const query = `CREATE (n:Users {id:${id}, name:${name}, email:${email}}) RETURN n`;
     const params = {
         id: parseInt(id, 10),
         name,

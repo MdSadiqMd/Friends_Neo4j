@@ -18,8 +18,13 @@ export async function executeCypherQuery(statement: string, params: Record<strin
         const result = await session.run(statement, params);
         return result;
     } catch (error) {
+        console.error(`Error executing Cypher query: ${statement}`, { error });
         throw error;
     } finally {
         await session.close();
     }
+}
+
+export function closeDriver(): Promise<void> {
+    return driver.close();
 }

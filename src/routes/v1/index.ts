@@ -6,6 +6,6 @@ import userRouter from "./user.routes";
 const v1Router = new Hono();
 
 v1Router.route('/friends', friendsRouter);
-v1Router.route('/user', userRouter);
+v1Router.route('/users', userRouter);
 
 export default v1Router;
