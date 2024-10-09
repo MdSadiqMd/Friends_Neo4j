@@ -5,10 +5,14 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.1",
+    "compression": "^1.7.4",
+    "config": "^3.3.12",
     "hono": "^4.6.3",
+    "neo4j-driver": "^5.25.0",
     "winston": "^3.15.0"
   },
   "devDependencies": {
+    "@types/config": "^3.3.5",
     "@types/node": "^20.16.11",
     "tsx": "^4.7.1"
   }

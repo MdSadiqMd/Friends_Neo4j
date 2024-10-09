@@ -1,0 +1,5 @@
+{
+  "dbHost": "bolt://localhost:7687",
+  "dbUser": "sadiq",
+  "dbPass": "admin"
+}
